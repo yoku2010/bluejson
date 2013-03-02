@@ -12,7 +12,7 @@
 	/**
 	 * @description Create a blue object.
 	 */
-	var blue = function(obj){
+	var blue = function(obj) {
 		if (obj instanceof blue) return obj;
 		if (!(this instanceof blue)) return new blue(obj);
 		this.object = obj;
@@ -27,7 +27,7 @@
 	/**
 	 * @description if object blue conflict with other object 
 	 */
-	blue.noConflict = function(){
+	blue.noConflict = function() {
 		win.bule = oldBlue;
 		return this;
 	};
@@ -36,12 +36,12 @@
 	/**
 	 * @description call this function to debug your code (this will helpfull for developers)
 	 */
-	blue.debug = function(s){
-		if(console!=void 0 && console.log!=void 0){
+	blue.debug = function(s) {
+		if(console!=void 0 && console.log!=void 0) {
 			console.log("[bule json debugger]");
 			console.log(s);
 		}
-		else{
+		else {
 			alert(s);
 		}
 	};
@@ -50,7 +50,7 @@
 	 * @description sum of array values 
 	 * @param Array object
 	 */
-	blue.sum=function(a){
+	blue.sum=function(a) {
 		return a.sum()
 	};
 	

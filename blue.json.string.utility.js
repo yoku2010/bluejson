@@ -36,8 +36,8 @@
 	 * @description Define all regular expression
 	 */
 	blue.regx = {
-			slugifyStrip:/[^\w\s-]/g,
-			slugifyHyphenate: /[-\s]+/g
+		slugifyStrip:/[^\w\s-]/g,
+		slugifyHyphenate: /[-\s]+/g
 	};
 	
 	/**
@@ -55,6 +55,14 @@
 	 */
 	StrProto.slugify=function(){
 		return this.replace(blue.regx.slugifyStrip, '').trim().replace(blue.regx.slugifyHyphenate, '-').toLowerCase();
+	}
+	
+	/**
+	 * @description repeat any given number of times
+	 */
+	StrProto.repeat= function(n){
+		n = n || 1;
+		return Array(n+1).join(this);
 	}
 	
 	win.blue = blue;
