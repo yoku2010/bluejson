@@ -61,39 +61,19 @@
 	 * @description sum of array values and all values should be integer or string
 	 * @param saparator: this will use when any array element's type is string (Default:",")
 	 */
-	ArrProto.sum=function(saparator){
-		var varType="number", allGood=true,s=0;
-		for(var i=0,ln=this.length;i<ln;i++){
-			if(this[i]!=undefined && this[i]!=null && !(this[i] instanceof Object)){
-				if(typeof this[i] == "number" && varType == "number"){
-					s+=this[i];
-				}
-				else if(typeof this[i] == "string"){
-					varType="string";
-				}
-			}
-			else{
-				blue.debug("Upsupported Type, Array's Variable should be number or string");
-				varType="object";
-				break;
-			}
+	ArrProto.sum = String.prototype.sum = function(separator){
+		arr = this.split ? this.split(separator||',') : this;
+		sum = 0;
+		for (_i = 0, _len = arr.length; _i < _len; _i++) {
+			x = arr[_i];
+			sum += Number(x);
 		}
-		if(varType=="string"){
-			s=String(this);
-			if(saparator!= void 0){
-				if(typeof saparator == "string"){
-					s=s.replace(",",saparator);
-				}
-				else{
-					blue.debug("Upsupported Type, saparator should be a string");
-				}
-			}
-			return s;
+		if(isNaN(sum)){
+			error = "Upsupported Type, Array's Variable should be number or string";
+			throw "Upsupported Type, Array's Variable should be number or string";
 		}
-		else if(varType=="number"){
-			return s;
-		}
-		return null;
+		else
+			return sum;
 	};
 	
 	/**
