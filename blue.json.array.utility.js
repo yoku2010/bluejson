@@ -10,7 +10,7 @@
 	var oldBlue = win.blue;
 	
 	/**
-	 * @description Create a blue object.
+	 * @description: Create a blue object.
 	 */
 	var blue = function(obj) {
 		if (obj instanceof blue) return obj;
@@ -25,7 +25,7 @@
 	blue.WEBSITE="http://bluejson.com";
 	
 	/**
-	 * @description if object blue conflict with other object 
+	 * @description: if object blue conflict with other object 
 	 */
 	blue.noConflict = function() {
 		win.bule = oldBlue;
@@ -34,21 +34,29 @@
 	
 	
 	/**
-	 * @description call this function to debug your code (this will helpfull for developers)
+	 * @description: call this function to debug your code (this will helpfull for developers)
 	 */
-	blue.debug = function(s) {
-		if(console!=void 0 && console.log!=void 0) {
-			console.log("[bule json debugger]");
-			console.log(s);
+	blue.log = function(s) {
+		if(window.console){
+			if (window.console.log.apply === undefined){  // For IE
+				var str='';
+				for(var i=0; i<arguments.length; i++){
+					str += arguments[i] + " ";
+				}
+				window.console.log(str);
+			}
+			else {
+				window.console.log.apply(window.console, arguments);  // For chrome, FF and Safari
+			}
 		}
-		else {
-			alert(s);
+		else if (window.debug){
+			window.debug.log.apply(debug, arguments); // For older version of IE
 		}
 	};
 	
 	/**
-	 * @description sum of array values 
-	 * @param Array object
+	 * @description: sum of array values 
+	 * @param: Array object
 	 */
 	blue.sum=function(a) {
 		return a.sum()
@@ -58,7 +66,7 @@
 	var ArrProto = Array.prototype;
 	
 	/**
-	 * @description sum of array values and all values should be integer or string
+	 * @description: sum of array values and all values should be integer or string
 	 * @param saparator: this will use when any array element's type is string (Default:",")
 	 */
 	ArrProto.sum=function(saparator){
@@ -73,7 +81,7 @@
 				}
 			}
 			else{
-				blue.debug("Upsupported Type, Array's Variable should be number or string");
+				blue.log("Upsupported Type, Array's Variable should be number or string");
 				varType="object";
 				break;
 			}
@@ -85,7 +93,7 @@
 					s=s.replace(",",saparator);
 				}
 				else{
-					blue.debug("Upsupported Type, saparator should be a string");
+					blue.log("Upsupported Type, saparator should be a string");
 				}
 			}
 			return s;
@@ -97,7 +105,7 @@
 	};
 	
 	/**
-	 * @description get the slice array from the array
+	 * @description: get the slice array from the array
 	 * @param start: starting index (Default:0)
 	 * @param end: ending index (Default:length of array)
 	 * @param step: step index (Default:1)
@@ -117,7 +125,7 @@
 		else if(step<0)
 			for(i=start;i>end;i+=step) _slice[_slice.length]=this[i];
 		else
-			blue.debug("slice step cannot be zero");
+			blue.log("slice step cannot be zero");
 		return _slice;
 	};
 	win.blue = blue;
