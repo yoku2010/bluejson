@@ -1,84 +1,296 @@
-<!doctype html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <meta name="description" content="bluejson JavaScript Library, JavaScript Array Library, JavaScript String Library, jQuery Utility Library, Opensource Library, Array Prototype, String Prototype, - By Yogesh Kumar, Email: yoku2010@gmail.com, JavaScript Library on github" />
-    <meta name="keywords" content="bluejson, blue json, javascript library, javascript utility library, javascript array library, javascript array utility library, javascript string library, javascript string utility library, jQuery library, jQuery utility library, javascript prototype, library using prototyping, yogesh kumar, yoku2010, yoku2010@gmail.com">
-    <meta property="og:image" content="">
-    <meta itemprop="image" content="">
-    <meta property="og:url" content="http://www.bluejson.com/">
-    <meta http-equiv="content-language" content="en-us">
-    <title>blue JSON</title>
-    <link rel="canonical" href="http://www.bluejson.com/">
-    <link rel="publisher" href="https://github.com/yoku2010/bluejson">
-    <link rel="SHORTCUT ICON" href="">
-    <link rel="stylesheet" href="stylesheets/styles.css">
-    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-    <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-  </head>
-  <body>
-    <div class="wrapper">
-      <header>
-        <h1>blue JSON</h1>
-        <p>It is a JavaScript utility library. it provides advance functions to make your work easy.</p>
-
-        <p class="view"><a href="https://github.com/yoku2010/bluejson">View the Library on GitHub</a></p>
-
-
-        <ul>
-          <li><a href="https://github.com/yoku2010/bluejson/zipball/master">Download <strong>ZIP File</strong></a></li>
-          <li><a href="https://github.com/yoku2010/bluejson/tarball/master">Download <strong>TAR Ball</strong></a></li>
-          <li><a href="https://github.com/yoku2010/bluejson">View On <strong>GitHub</strong></a></li>
-        </ul>
-      </header>
-      <section>
-        <h3>Welcome to blue JSON.</h3>
-
-<p>Currently we have three utility files:</p>
-
-<pre><code>1. blue.json.array.utility.js
-2. blue.json.jquery.utility.js
-3. blue.json.string.utility.js
-</code></pre>
-
-<p>These utility files will give you functions to make your work easy.</p>
-
-<h3>Array Utility</h3>
-<p>This Library extand <a>Array</a> object and add new properties like sum, newSlice and empty.</p>
-
-<h3>jQuery Utility</h3>
-<p>This Library extand <a href="http://www.jquery.com" target="_blank">jQuery</a> Object and add refresh function which gives you updated selector.</p>
-
-<h3>String Utility</h3>
-<p>This Library extand <a>String</a> object and add new properties like slugify, toProperCase and toTitleCase.</p>
-
-<h3>Charts</h3>
-<p>Now you can plot bar charts using blue json library. This is svg graphs using <a href="http://d3js.org/" target="_blank">d3.js</a> library. To manage large amout of data we are using <a href="http://square.github.io/crossfilter/" target="_blank">crossfilter</a> library.</p>
-
-<h4>Support or Contact</h4>
-<p>Having trouble with Lirary?  contact <a href="mailto:yoku2010@gmail.com">yoku2010@gmail.com</a> and we’ll help you sort it out.</p>
-      </section>
-      <footer>
-        <p>This Library maintained by <a href="https://github.com/yoku2010" target="_blank">Yogesh Kumar</a></p>
-        <p>Yogesh Kumar's <a href="http://yoku2010.github.com/resume" target="_blank">Online Resume</a></p>
-        <p><small>Last Updated On &mdash; <a>30-Sep-2014</a></small></p>
-      </footer>
-    </div>
-    <script src="javascripts/scale.fix.js"></script>
-              <script type="text/javascript">
-            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
-          </script>
-          <script type="text/javascript">
-            try {
-              var pageTracker = _gat._getTracker("UA-37265345-3");
-            pageTracker._trackPageview();
-            } catch(err) {}
-          </script>
-
-  </body>
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>bluejson</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" media="all" href="css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" media="all" href="css/bootstrap-theme.min.css">
+        <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
+        <link rel="stylesheet" type="text/css" media="all" href="css/main.css">
+        <link rel="icon" href="img/favicon.ico" type="image/icon" sizes="16x16">
+        <script type="text/javascript" src="js/libs/jquery-1.11.2.min.js"></script>
+        <script type="text/javascript" src="js/libs/bootstrap.min.js"></script>
+    </head>
+     <body>
+        <header class="navbar">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <nav class="navbar navbar-static-top" role="navigation">
+                            <div class="container-fluid">
+                                <div class="navbar-header">
+                                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-9">
+                                        <span class="sr-only">Toggle</span>
+                                        <span class="icon-bar"></span>
+                                        <span class="icon-bar"></span>
+                                        <span class="icon-bar"></span>
+                                    </button>
+                                    <a class="navbar-brand" href="#">
+                                        <span class="fa fa-leaf"></span> <span> bluejson</span>
+                                    </a>
+                                </div>
+                                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-9" nav-collapse="">
+                                <ul class="nav navbar-nav">
+                                    <li class="active"><a href="index.html">Home</a></li>
+                                    <li><a href="about.html">About</a></li>
+                                    <li><a href="plugins.html">Plugins</a></li>
+                                    <li><a href="blog.html">Blog</a></li>
+                                    <li><a href="contacts.html">Contacts</a></li>
+                                </ul>
+                                </div>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <section>
+            <div class="header">
+                 <div class="container">
+                    <div class="row box">
+                        <div class="col-md-4">
+                            <div class="row">
+                                <div class="col-xs-6 s-box">
+                                    <a href="#" class="dark">
+                                        <div class="icon">
+                                            <span class="fa fa-4x fa-shield"></span>
+                                        </div>
+                                        <div class="text">Libraries</div>
+                                    </a>
+                                </div>
+                                <div class="col-xs-6 s-box">
+                                    <a href="#" class="light">
+                                        <div class="icon">
+                                            <span class="fa fa-4x fa-pie-chart"></span>
+                                        </div>
+                                        <div class="text">Graphs</div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-6 s-box">
+                                    <a href="#" class="light">
+                                        <div class="icon">
+                                            <span class="fa fa-4x fa-gamepad"></span>
+                                        </div>
+                                        <div class="text">Games</div>
+                                    </a>
+                                </div>
+                                <div class="col-xs-6 s-box">
+                                    <a href="#" class="dark">
+                                        <div class="icon">
+                                            <span class="fa fa-4x fa-th-large"></span>
+                                        </div>
+                                        <div class="text">Themes</div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-8">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <h1>bluejson</h1>
+                                    <div class="head-btn">Strong</div>
+                                    <div class="head-btn">Stable</div>
+                                    <div class="head-btn">Safe</div>
+                                </div>
+                                <div class="col-md-12">
+                                    <p class="sub-header">We help you develop your website in a easy way.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="body-bar">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <div class="quick-summary">
+                                <div class="count">03</div>
+                                <div class="text">JavaScript<br/>Libraries</div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="quick-summary">
+                                <div class="count">10</div>
+                                <div class="text">Graphs and<br/>Games</div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="quick-summary">
+                                <div class="count">02</div>
+                                <div class="text">HTML5 CSS3<br/> Themes</div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <a href="bj-player.html" class="quick-button">
+                                <div class="icon">
+                                    <span class="fa fa-play-circle"></span>
+                                </div>
+                                <div class="text">BJ Music</div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="body">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="welcome-box">
+                                <h2>Welcome</h2>
+                                <p class="text-2x">Read more about the freebie here. Go to TemplateMonster.com and find more goodies of this kind</p>
+                                <p>
+                                    Curabitur vel lorem sit amet nulla ullamcorper fermentum. In vitae varius augue, eu consectetur ligula. Etiam dui eros, laoreet site amet est vel, commodo venenatis eros. Fusce adipiscing quam id risus sagittis, non consequat lacus interdum. nulla, eu sodales arcu. Quisque viverra nulla nunc, eu ultrices libero ultricies eget. Phasellus accumsan
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="grey-body">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-8">
+                            <div class="info-box">
+                                <h3>Our Advantages</h3>
+                                <div class="block">
+                                    <div class="row">
+                                        <div class="col-md-3">
+                                            <img src="img/page1_img1.jpg">
+                                        </div>
+                                        <div class="col-md-9">
+                                            <a href="#" class="h4">Experience</a>
+                                            <p>Curabitur vel lorem sit amet nulla ullamcorper fermentum In vitae dert varius augue, eu consectetur ligulaam dui eros dertoli.</p>
+                                            <p>Fusce adipiscing quam id risus sagittis, non consequat lacus interdum. Proin ut tinciduntol nulla, eu sodales vertomin</p>
+                                            <a href="#" class="h5">more</a>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-3">
+                                            <img src="img/page1_img2.jpg">
+                                        </div>
+                                        <div class="col-md-9">
+                                            <a href="#" class="h4">Marking</a>
+                                            <p>Curabitur vel lorem sit amet nulla ullamcorper fermentum In vitae dert varius augue, eu consectetur ligulaam dui eros dertoli.</p>
+                                            <p>Fusce adipiscing quam id risus sagittis, non consequat lacus interdum. Proin ut tinciduntol nulla, eu sodales vertomin</p>
+                                            <a href="#" class="h5">more</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="info-box">
+                                <h3>Testimonials</h3>
+                                <div class="block">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <blockquote class="grey">
+                                                <p>"Curabitur vel lorem sit amet nulla erero fermentum. In vitae varius auguectetu ligula. Etiam dui eros, laoreet site am est vel commodo venenatisipiscing... "</p>
+                                                <span>Liza Jons</span>
+                                            </blockquote>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <blockquote class="grey">
+                                                <p>"Burabitur vel lorem sit amet nulla erero fermentum. In vitae varius auguectetu ligula. Etiam dui eros, laoreet site am ast vel commodo venenatisipiscino... "</p>
+                                                <span>Mark Brown</span>
+                                            </blockquote>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="body">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-5">
+                            <div class="info-box">
+                                <div class="block">
+                                    <h4>About Company</h4>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <img class="put-left" src="img/page1_img3.jpg">
+                                            <p>Curabitur vel lorem sit amet nulla ullamcorper fermentum In vitae dert varius augue, eu consectetur ligulaam dui eros dertoli.</p>
+                                            <p>Fusce adipiscing quam id risus sagittis, non consequat lacus interdum. Proin ut tinciduntol nulla, eu sodales vertomin</p>
+                                            <p>Curabitur vel lorem sit amet nulla ullamcorper fermentum In vitae dert rius augue, eu consectetur larem dui eros dertolisce dertolo</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="info-box">
+                                <div class="block">
+                                    <h4>Solutions</h4>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <ul class="arrow-list">
+                                                <li>
+                                                    <a href="#">Vivamus at magna non nunc tristique</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">Aliquam nibh ante, egestas id</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">Ommodo luctus libero</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">Faucibus malesuada faucibusonec</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">Laoreet metus id laoreet</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">Jalesuadaorem ipsum dolor sit ame</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">Faucibus ipsum dolor sit ame</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">Ommodo ipsum dolor sit ame</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="info-box">
+                                <div class="block">
+                                    <h4>Contact Info</h4>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <p>A-814 Ashiyana Upvan, Ahinsha Khand 2</p>
+                                            <p>Indrapuram, Uttar Pradesh, India</p>
+                                            <p>+91 8130935784</p>
+                                            <a href="mailto:yoku2010@gmail.com">yoku2010@gmail.com</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <footer>
+            <div class="footer">
+                <div class="container">
+                    <div class="row">
+                        <div class="brand">bluejson</div>
+                        <div class="copyright">&copy; 2015</div>
+                        <div class="details">Follow me on <a class="user-mention" href="https://twitter.com/yoku_2010">Twitter</a>,<a class="user-mention" href="https://github.com/yoku2010">GitHub</a>,<a class="user-mention" href="http://www.linkedin.com/pub/yogesh-kumar/22/1b0/997">LinkedIn</a> or <a class="user-mention" href="http://www.facebook.com/yoku2010">Facebook</a></div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </body>
 </html>
