@@ -324,29 +324,30 @@ ul.arrow-list li + li {
   height: 399px;
   max-width: 100%;
   border: 0;
+  pointer-events:none;
 }
 .form-control {
     margin-bottom: 10px;
 }
 .footer {
+    background-color: #3CB0BD;
     padding: 20px 0;
     margin-top: 0;
     font-size: 20px;
+    color: #FFF;
 }
 .footer .brand {
     display: inline-block;
 }
 .footer .copyright {
-    color: #444;
     font-size: 12px;
     display: inline-block;
 }
 .footer .details{
-    color: #444;
     font-size: 12px;
 }
 .footer .details a {
-    color: #444;
+    color: #FFF;
     margin: 0 3px;
 }
 .footer .details a:hover {
