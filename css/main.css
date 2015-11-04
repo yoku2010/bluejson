@@ -7,22 +7,25 @@
 @import url(//fonts.googleapis.com/css?family=Roboto+Condensed:300);
 body {
     font: 300 14px/20px 'Open Sans', sans-serif;
-    background-color: #01b1b7;
+    background-color: #FFF;
     color: #000;
+}
+h1,h2,h3,h4,h5,h6 {
+  font-family: 'Roboto Condensed' !important;
 }
 section {
     min-height: 600px;
 }
 a {
-    color: #01b1b7;
+    color: #3CB0BD;
     text-decoration: none;
 }
-a:hover {
-    color: #088389;
+a:hover, a:focus {
+    color: #209DAA;
     text-decoration: none;
 }
 h1 {
-    color: #01b1b7;
+    color: #3CB0BD;
 }
 h2 {
     font-size: 50px;
@@ -57,11 +60,14 @@ h4 {
     color: #FFF;
 }
 .navbar .navbar-nav>li.active>a, .navbar .navbar-nav>li:hover.active>a {
-    background-color: #088389;
+    background-color: #3CB0BD;
     color: #FFF;
 }
 .navbar .navbar-toggle .icon-bar {
     background-color: #7b9b09;
+}
+.navbar .navbar-brand {
+
 }
 .header {
     position: relative;
@@ -72,14 +78,13 @@ h4 {
     background: url(../img/slide.jpg) center 0 no-repeat;
 }
     .header h1 {
-        font-size: 55px;
-        line-height: 72px;
+        font-size: 5em;
         margin: 0px 0px 20px;
     }
     .header .sub-header {
-        color: #E6E5E5;
-        font-size: 30px;
-        line-height: 40px;
+      color: #C6810A;
+      font-size: 20px;
+      line-height: 20px;
     }
 .box {
     padding: 50px 0px;
@@ -95,15 +100,18 @@ h4 {
     font-size: 18px;
     padding: 20px;
 }
-.box .s-box>a:hover {
-    background-color: #000!important;
-}
 .box .s-box>a.dark {
-    background-color: #088389;
+    background-color: #3CB0BD;
 }
 .box .s-box>a.light {
-    background-color: #01b1b7;
+    background-color: #FAC64C;
 }
+ .box .s-box>a.light:hover {
+   color: #3CB0BD;
+ }
+ .box .s-box>a.dark:hover {
+   color: #FAC64C;
+ }
 .box .s-box>a .icon {
     padding: 25px 20px 23px;
 }
@@ -111,8 +119,8 @@ h4 {
     padding-top: 15px;
 }
 .head-btn {
-    background-color: #6b6b6b;
-    border: 1px solid #999;
+    background-color: #FAC64C;
+    border: 1px solid #FFFDDC;
     color: #ffffff;
     display: inline-block;
     padding: 10px;
@@ -122,10 +130,11 @@ h4 {
     margin-bottom: 30px;
     cursor: default;
     font-size: 16px;
+    font-weight: bold;
 }
 .body-bar {
     font: 20px/30px 'Roboto Condensed', sans-serif;
-    background-color: #088389;
+    background-color: #3CB0BD;
     color: #ffffff;
     font-size: 20px;
     line-height: 30px;
@@ -152,7 +161,7 @@ a.quick-button {
 }
 .quick-button .icon {
     display: inline-block;
-    background-color: #01b1b7;
+    background-color: #FAC64C;
     color: #FFF;
     padding: 10px 15px 5px;
 }
@@ -216,7 +225,7 @@ blockquote.grey span {
     font-size: 16px;
 }
 .circle-number {
-    background-color: #01b1b7;
+    background-color: #FAC64C;
     color: #ffffff;
     width: 68px;
     height: 68px;
@@ -282,7 +291,7 @@ ul.arrow-list li + li {
 }
 .blog .comment .fa {
     margin-right: 5px;
-    color: #01b1b7;
+    color: #FAC64C;
     margin-top: 1px;
     font-size: 30px;
     line-height: 22px;
@@ -300,7 +309,7 @@ ul.arrow-list li + li {
     color: #464545;
 }
 .blog .more:hover {
-    color: #01b1b7;
+    color: #FAC64C;
 }
 .map figure {
     position: relative;
@@ -322,24 +331,23 @@ ul.arrow-list li + li {
 .footer {
     padding: 20px 0;
     margin-top: 0;
-    color: #000;
-    border-top: 1px solid #5c5c5c;
+    font-size: 20px;
 }
 .footer .brand {
-    color: #000;
     display: inline-block;
 }
 .footer .copyright {
-    color: #4b4a4a;
-    font-size: 10px;
+    color: #444;
+    font-size: 12px;
     display: inline-block;
 }
 .footer .details{
-    color: #4b4a4a;
-    font-size: 10px;
+    color: #444;
+    font-size: 12px;
 }
 .footer .details a {
-    color: #6d6a6a;
+    color: #444;
+    margin: 0 3px;
 }
 .footer .details a:hover {
     color: #FFF;
