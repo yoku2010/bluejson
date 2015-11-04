@@ -5,11 +5,15 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" type="text/css" media="all" href="css/bootstrap.min.css">
         <link rel="stylesheet" type="text/css" media="all" href="css/bootstrap-theme.min.css">
+        <link rel="stylesheet" type="text/css" media="all" href="css/jquery.bs.message.min.css">
         <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
         <link rel="stylesheet" type="text/css" media="all" href="css/main.css">
         <link rel="icon" href="img/favicon.ico" type="image/icon" sizes="16x16">
         <script type="text/javascript" src="js/libs/jquery-1.11.2.min.js"></script>
+        <script type="text/javascript" src="js/libs/jquery.validate.min.js"></script>
         <script type="text/javascript" src="js/libs/bootstrap.min.js"></script>
+        <script type="text/javascript" src="js/libs/jquery.bs.message.min.js"></script>
+        <script src="https://cdn.firebase.com/js/client/1.1.0/firebase.js"></script>
         <script type="text/javascript" src="js/contacts.js"></script>
     </head>
      <body>
@@ -107,42 +111,52 @@
                                     <div class="row">
                                         <div class="col-md-12">
                                             <div class="info-box">
-                                                <h3>Miscellaneous information:</h3>
+                                                <h3>Send Your Query or Feedback:</h3>
                                                 <div class="block">
                                                     <div class="row">
                                                         <div class="col-md-12">
-                                                            <p>24/7 support is available for all premium themes.</p>
-                                                            <p>If you have problems with customization of freebies, ask guys from TemplateTuning to help you.</p>
-                                                            <p>Aliquam nibh ante, egestas id dictum a, commodo luctus liberoret. Praesenter faucibus malesuada faucibus. Donec laoreet metus id laoreet malesuada. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam consectetur orci sed nulla facilisis consequa.</p>
+                                                            <p>24/7 support is available.</p>
+                                                            <p>If you have problems with customization of freebies, ask us to help you.</p>
+                                                            <p>Submit your query/feedback with your contact details. We will fix your issue and notify.</p>
                                                         </div>
                                                     </div>
-                                                    <div class="row">
-                                                        <div class="col-md-4">
-                                                            <div class="input-form">
-                                                                <input type="text" class="form-control" placeholder="Name:"/>
+                                                    <div id="msg"></div>
+                                                    <form action="" method="post" id="contact_us_form">
+                                                        <div class="row">
+                                                            <div class="col-md-4">
+                                                                <div class="input-form">
+                                                                    <input type="text" class="form-control" name="n" placeholder="Name:"/>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-4">
+                                                                <div class="input-form">
+                                                                    <input type="text" class="form-control" name="e" placeholder="E-mail:"/>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-4">
+                                                                <div class="input-form">
+                                                                    <input type="text" class="form-control" name="tp" placeholder="Phone:"/>
+                                                                </div>
                                                             </div>
                                                         </div>
-                                                        <div class="col-md-4">
-                                                            <div class="input-form">
-                                                                <input type="text" class="form-control" placeholder="E-mail:"/>
+                                                        <div class="row">
+                                                            <div class="col-md-12">
+                                                                <div class="input-form">
+                                                                    <input type="text" class="form-control" name="s" placeholder="Subject:"/>
+                                                                </div>
                                                             </div>
                                                         </div>
-                                                        <div class="col-md-4">
-                                                            <div class="input-form">
-                                                                <input type="text" class="form-control" placeholder="Phone:"/>
+                                                        <div class="row">
+                                                            <div class="col-md-12">
+                                                                <div class="input-form">
+                                                                    <textarea class="form-control" placeholder="Message:" name="m" rows="10"></textarea>
+                                                                </div>
                                                             </div>
                                                         </div>
-                                                    </div>
-                                                    <div class="row">
-                                                        <div class="col-md-12">
-                                                            <div class="input-form">
-                                                                <textarea class="form-control" placeholder="Message:" rows="10"></textarea>
+                                                        <div class="row">
+                                                            <div class="col-md-12 text-right">
+                                                                <button type="submit" class="btn btn-default">Submit</button>
                                                             </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="row">
-                                                        <div class="col-md-12 text-right">
-                                                            <button type="button" class="btn btn-default">Send e-mail</button>
                                                         </div>
                                                     </div>
                                                 </div>
