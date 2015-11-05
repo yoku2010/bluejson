@@ -545,3 +545,9 @@ table.dataTable thead .sorting {
 table.dataTable thead .sorting, table.dataTable thead .sorting_asc, table.dataTable thead .sorting_desc {
   cursor: pointer;
 }
+.blog {
+  margin-bottom: 30px;
+}
+.oa {
+  margin-bottom: 20px;
+}
