@@ -8,9 +8,9 @@
 (function(){
 	var win = this;
 	var oldBlue = win.blue;
-	
+
 	/**
-	 * @description: Create a blue object.
+	 * @description Create a blue object.
 	 */
 	var blue = function(obj) {
 		if (obj instanceof blue) return obj;
@@ -23,110 +23,59 @@
 	blue.VERSION = "0.1";
 	blue.AUTHOR="Yogesh Kumar";
 	blue.WEBSITE="http://bluejson.com";
-	
+
 	/**
-	 * @description: if object blue conflict with other object 
+	 * @description if object blue conflict with other object
 	 */
 	blue.noConflict = function() {
 		win.bule = oldBlue;
 		return this;
 	};
-	
-	
-	/**
-	 * @description: call this function to debug your code (this will helpfull for developers)
-	 */
-	blue.log = function(s) {
-		if(window.console){
-			if (window.console.log.apply === undefined){  // For IE
-				var str='';
-				for(var i=0; i<arguments.length; i++){
-					str += arguments[i] + " ";
-				}
-				window.console.log(str);
-			}
-			else {
-				window.console.log.apply(window.console, arguments);  // For chrome, FF and Safari
-			}
-		}
-		else if (window.debug){
-			window.debug.log.apply(debug, arguments); // For older version of IE
-		}
-	};
-	
-	/**
-	 * @description: sum of array values 
-	 * @param: Array object
-	 */
-	blue.sum=function(a) {
-		return a.sum()
-	};
-	
+
 	// Array Prototyping store in a variable
 	var ArrProto = Array.prototype;
-	
+
 	/**
-	 * @description: sum of array values and all values should be integer or string
-	 * @param saparator: this will use when any array element's type is string (Default:",")
+	 * @description return the first element of Array
+	 * @param N/A
 	 */
-	ArrProto.sum=function(saparator){
-		var varType="number", allGood=true,s=0;
-		for(var i=0,ln=this.length;i<ln;i++){
-			if(this[i]!=undefined && this[i]!=null && !(this[i] instanceof Object)){
-				if(typeof this[i] == "number" && varType == "number"){
-					s+=this[i];
-				}
-				else if(typeof this[i] == "string"){
-					varType="string";
-				}
-			}
-			else{
-				blue.log("Upsupported Type, Array's Variable should be number or string");
-				varType="object";
-				break;
-			}
-		}
-		if(varType=="string"){
-			s=String(this);
-			if(saparator!= void 0){
-				if(typeof saparator == "string"){
-					s=s.replace(",",saparator);
-				}
-				else{
-					blue.log("Upsupported Type, saparator should be a string");
-				}
-			}
-			return s;
-		}
-		else if(varType=="number"){
-			return s;
-		}
-		return null;
+	ArrProto.first = function(){
+		return this.initial(0);
 	};
-	
+
 	/**
-	 * @description: get the slice array from the array
-	 * @param start: starting index (Default:0)
-	 * @param end: ending index (Default:length of array)
-	 * @param step: step index (Default:1)
+	 * @description returns the passed index element of Array
+	 * @param index: valid index of Array
 	 */
-	ArrProto.newSlice=function(start,end,step){
-		// set default values
-		if(start==void 0) start=0;
-		else if(start<0) start=this.length+start;
-		if(end==void 0) end=this.length;
-		else if(end>this.length)end=this.length;
-		else if(end<0) end=this.length+end;
-		if(step==void 0) step=1;
-		// declare variables
-		var _slice=[],i;
-		if(step>0)
-			for(i=start;i<end;i+=step) _slice[_slice.length]=this[i];
-		else if(step<0)
-			for(i=start;i>end;i+=step) _slice[_slice.length]=this[i];
-		else
-			blue.log("slice step cannot be zero");
-		return _slice;
+	ArrProto.initial = function(index){
+		return this.length > index && this[index] || null;
 	};
+
+	/**
+	 * @description returns the rest of the elements which you have been passed
+	 * @param index: valid index of Array
+	 */
+	ArrProto.rest = function(index){
+		return this.slice(index).concat(this.slice(index + 1));
+	};
+
+	/**
+	 * @description returns the status of emptness
+	 * @param N/A
+	 */
+	ArrProto.isEmpty = function(){
+		return this.length > 0 && true || false;
+	};
+
+	/**
+	 * @description returns copy of Array
+	 * @param N/A
+	 */
+	ArrProto.copy = function(){
+		return this.slice();
+	};
+
+
+
 	win.blue = blue;
-}).call(this)
+}).call(this);
